@@ -11,6 +11,11 @@
 # production
 /build
 
+# materials
+/design
+/images
+/index.html
+
 # misc
 .DS_Store
 .env.local
