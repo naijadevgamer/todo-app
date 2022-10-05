@@ -1,0 +1,33 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  // equals to 1rem or 10px
+  font-size: 62.5%;
+
+  // @include respond(tab-land) {
+  //   font-size: 56.25%;
+  // }
+
+  // @include respond(tab-port) {
+  //   font-size: 50%;
+  // }
+
+  // @include respond(big-desktop) {
+  //   font-size: 75%;
+  // }
+}
+body {
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.8rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: hsl(0, 0%, 98%);
+  min-height: 100vh;
+}
