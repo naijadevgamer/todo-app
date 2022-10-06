@@ -13,6 +13,24 @@ function TaskBox() {
         <Task />
         <Task />
         <Task />
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+        <Task />
       </ul>
       <ul className="task-box__log-box">
         <li className="task-box__log task-box__log--items-left">

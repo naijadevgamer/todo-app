@@ -15,6 +15,7 @@ function App() {
         <Header />
         <SearchBox />
         <TaskBox />
+        <footer className="footer">Drag and drop to reorder list</footer>
       </div>
     </div>
   );

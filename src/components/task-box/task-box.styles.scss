@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   background-color: white;
-  box-shadow: 0rem 1.5rem 2rem rgba(rgb(0, 0, 0), 0.3);
+  box-shadow: 0rem 1rem 3rem rgba(rgb(0, 0, 0), 0.2);
   border-radius: 6px;
   overflow: hidden;
   &__tasks {
@@ -12,6 +12,7 @@
     flex-direction: column;
   }
   &__log-box {
+    color: hsl(236, 9%, 61%);
     padding: 1rem 2rem;
     height: 5.5rem;
     display: flex;
@@ -23,6 +24,9 @@
     font-size: 1.4rem;
     &--clear {
       cursor: pointer;
+      &:hover {
+        color: hsl(235, 19%, 35%);
+      }
     }
   }
   &__filter-box {
@@ -34,5 +38,8 @@
   &__filter {
     font-weight: 700;
     cursor: pointer;
+    &:hover {
+      color: hsl(235, 19%, 35%);
+    }
   }
 }
