@@ -1,0 +1,33 @@
+.task-box {
+  width: 100%;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0rem 2rem 1.5rem rgba(rgb(0, 0, 0), 0.3);
+  border-radius: 6px;
+  &__log-box {
+    padding: 1rem 2rem;
+    height: 5.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__log {
+    list-style: none;
+    font-size: 1.4rem;
+    &--clear {
+      cursor: pointer;
+    }
+  }
+  &__filter-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+  }
+  &__filter {
+    font-weight: 700;
+    cursor: pointer;
+  }
+}

@@ -2,3 +2,12 @@
   background-color: hsl(0, 0%, 98%);
   min-height: 100vh;
 }
+.main {
+  position: absolute;
+  top: 7.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 58rem;
+  display: flex;
+  flex-direction: column;
+}

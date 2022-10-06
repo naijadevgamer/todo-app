@@ -1,13 +1,15 @@
 import React from "react";
-import { ReactComponent as Logo } from "../../images/icon-sun.svg";
+import { ReactComponent as MoonIcon } from "../../images/icon-moon.svg";
 
 import "./header.styles.scss";
 
 function Header() {
   return (
     <div className="header">
-      <p className="header__logo">LOGO</p>
-      <Logo className="header__weather-icon" />
+      <p className="header__logo" draggable={true}>
+        Todo
+      </p>
+      <MoonIcon className="header__weather-icon" />
     </div>
   );
 }
