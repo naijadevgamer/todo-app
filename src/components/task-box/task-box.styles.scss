@@ -18,10 +18,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size: 1.5rem;
   }
   &__log {
     list-style: none;
-    font-size: 1.4rem;
     &--clear {
       cursor: pointer;
       &:hover {
@@ -33,7 +33,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 40%;
+    width: 35%;
   }
   &__filter {
     font-weight: 700;

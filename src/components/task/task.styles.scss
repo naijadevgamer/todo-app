@@ -7,15 +7,34 @@
   background-color: white;
   border-bottom: 2px solid hsl(236, 33%, 92%);
   list-style: none;
+  position: relative;
   &__circle {
     border-radius: 50%;
     height: 2.5rem;
     width: 2.5rem;
     border: hsl(233, 11%, 84%) 1px solid;
     margin-right: 2rem;
+    z-index: 1;
+    background-color: white;
     &:hover {
       cursor: pointer;
     }
+  }
+  &__circle:hover + &__circle-hover {
+    display: block;
+  }
+  &__circle-hover {
+    position: absolute;
+    height: 2.6rem;
+    width: 2.6rem;
+    left: 1.95rem;
+    background-image: linear-gradient(
+      to bottom right,
+      hsl(192, 100%, 67%),
+      hsl(280, 87%, 65%)
+    );
+    border-radius: 50%;
+    display: none;
   }
   &__item {
     width: calc(100% - 5rem);
@@ -34,5 +53,6 @@
     right: 0;
     transform: translateY(-50%);
     display: none;
+    font-size: 2.5rem;
   }
 }
