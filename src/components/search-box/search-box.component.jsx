@@ -7,7 +7,8 @@ function SearchBox({ input, setInput, tasks, setTask }) {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTask([...tasks, { input: input }]);
+    setTask([...tasks, { value: input }]);
+    console.log(tasks);
   };
   return (
     <div className="search-box">

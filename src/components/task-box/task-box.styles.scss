@@ -7,10 +7,6 @@
   box-shadow: 0rem 1rem 3rem rgba(rgb(0, 0, 0), 0.2);
   border-radius: 6px;
   overflow: hidden;
-  &__tasks {
-    display: flex;
-    flex-direction: column;
-  }
   &__log-box {
     color: hsl(236, 9%, 61%);
     padding: 1rem 2rem;

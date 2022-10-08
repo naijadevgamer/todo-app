@@ -1,15 +1,13 @@
 import React from "react";
 
-import Task from "../task/task.component";
+import Tasks from "../tasks/tasks.component";
 
 import "./task-box.styles.scss";
 
 function TaskBox({ tasks }) {
   return (
     <div className="task-box">
-      <ul className="task-box__tasks">
-        <Task tasks={tasks} />
-      </ul>
+      <Tasks tasks={tasks} />
       <ul className="task-box__log-box">
         <li className="task-box__log task-box__log--items-left">
           5 items left
