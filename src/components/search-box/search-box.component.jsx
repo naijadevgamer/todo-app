@@ -2,13 +2,13 @@ import React from "react";
 import "./search-box.styles.scss";
 
 function SearchBox({ input, setInput, tasks, setTask }) {
+  let id = 0;
   const handleChange = (e) => {
     setInput(e.target.value);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTask([...tasks, { value: input }]);
-    console.log(tasks);
+    setTask([...tasks, { value: input, id: (id += 1) }]);
   };
   return (
     <div className="search-box">
