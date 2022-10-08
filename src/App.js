@@ -11,18 +11,7 @@ import "./App.scss";
 function App() {
   const [input, setInput] = useState("");
   const [tasks, setTask] = useState([]);
-  const generateKey = () => {
-    let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-    let alpha = characters[Math.floor(Math.random() * 52)];
 
-    let total = "";
-    for (let i = 0; i < 3; i++) {
-      let num = String(Math.floor(Math.random() * 10));
-      total += num;
-    }
-    console.log(total);
-  };
-  generateKey();
   return (
     <div className="App">
       <Background />

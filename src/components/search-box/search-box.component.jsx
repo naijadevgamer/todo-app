@@ -2,13 +2,27 @@ import React from "react";
 import "./search-box.styles.scss";
 
 function SearchBox({ input, setInput, tasks, setTask }) {
-  let id = 0;
+  const generateKey = () => {
+    let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+    let totalL = "";
+    let totalN = "";
+    for (let i = 0; i < 3; i++) {
+      let num = String(Math.floor(Math.random() * 10));
+      totalN += num;
+    }
+    for (let i = 0; i < 4; i++) {
+      let alpha = characters[Math.floor(Math.random() * 52)];
+      totalL += alpha;
+    }
+    return totalN + totalL;
+  };
   const handleChange = (e) => {
     setInput(e.target.value);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTask([...tasks, { value: input, id: (id += 1) }]);
+    setTask([...tasks, { value: input, id: generateKey() }]);
   };
   return (
     <div className="search-box">
