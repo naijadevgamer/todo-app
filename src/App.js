@@ -16,8 +16,13 @@ function App() {
       <Background />
       <div className="main">
         <Header />
-        <SearchBox input={input} setInput={setInput} />
-        <TaskBox input={input} />
+        <SearchBox
+          input={input}
+          setInput={setInput}
+          tasks={tasks}
+          setTask={setTask}
+        />
+        <TaskBox tasks={tasks} />
         <footer className="footer">Drag and drop to reorder list</footer>
       </div>
     </div>

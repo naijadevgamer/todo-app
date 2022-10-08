@@ -1,19 +1,14 @@
 import React from "react";
-import { useState } from "react";
 
 import Task from "../task/task.component";
 
 import "./task-box.styles.scss";
 
-function TaskBox({ todo }) {
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   addTask([tasks...,tasks])
-  // };
+function TaskBox({ tasks }) {
   return (
     <div className="task-box">
       <ul className="task-box__tasks">
-        <Task todo={todo} tasks={tasks} />
+        <Task tasks={tasks} />
       </ul>
       <ul className="task-box__log-box">
         <li className="task-box__log task-box__log--items-left">
