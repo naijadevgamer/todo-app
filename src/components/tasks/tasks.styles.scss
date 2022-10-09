@@ -20,7 +20,11 @@
     margin-right: 2rem;
     z-index: 2;
     background-color: white;
+    color: white;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     &:hover {
       cursor: pointer;
     }
@@ -39,6 +43,19 @@
       hsl(280, 87%, 65%)
     );
     border-radius: 50%;
+    display: none;
+  }
+  &__check {
+    display: none;
+  }
+  &__check:checked ~ &__circle {
+    background-image: linear-gradient(
+      to bottom right,
+      hsl(192, 100%, 67%),
+      hsl(280, 87%, 65%)
+    );
+  }
+  &__check:checked ~ &__circle-hover {
     display: none;
   }
   &__item {

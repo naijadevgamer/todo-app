@@ -4,9 +4,8 @@ import "./search-box.styles.scss";
 function SearchBox({ input, setInput, tasks, setTask }) {
   const generateKey = () => {
     let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-
-    let totalL = "";
-    let totalN = "";
+    let totalL = "",
+      totalN = "";
     for (let i = 0; i < 3; i++) {
       let num = String(Math.floor(Math.random() * 10));
       totalN += num;
@@ -17,13 +16,18 @@ function SearchBox({ input, setInput, tasks, setTask }) {
     }
     return totalN + totalL;
   };
+
   const handleChange = (e) => {
     setInput(e.target.value);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (input.length) setTask([...tasks, { value: input, id: generateKey() }]);
-
+    if (input.length)
+      setTask([
+        ...tasks,
+        { value: input, id: generateKey(), completed: false },
+      ]);
     setInput("");
   };
   return (
