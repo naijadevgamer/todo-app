@@ -4,10 +4,10 @@ import Tasks from "../tasks/tasks.component";
 
 import "./task-box.styles.scss";
 
-function TaskBox({ tasks }) {
+function TaskBox({ tasks, setTask }) {
   return (
     <div className="task-box">
-      <Tasks tasks={tasks} />
+      <Tasks tasks={tasks} setTask={setTask} />
       <ul className="task-box__log-box">
         <li className="task-box__log task-box__log--items-left">
           5 items left

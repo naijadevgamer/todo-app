@@ -22,7 +22,9 @@ function SearchBox({ input, setInput, tasks, setTask }) {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTask([...tasks, { value: input, id: generateKey() }]);
+    if (input.length) setTask([...tasks, { value: input, id: generateKey() }]);
+
+    setInput("");
   };
   return (
     <div className="search-box">

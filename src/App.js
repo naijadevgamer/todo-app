@@ -23,7 +23,7 @@ function App() {
           tasks={tasks}
           setTask={setTask}
         />
-        <TaskBox tasks={tasks} />
+        <TaskBox tasks={tasks} setTask={setTask} />
         <footer className="footer">Drag and drop to reorder list</footer>
       </div>
     </div>

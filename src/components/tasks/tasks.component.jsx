@@ -2,7 +2,10 @@ import React from "react";
 
 import "./tasks.styles.scss";
 
-function Tasks({ tasks }) {
+function Tasks({ tasks, setTask }) {
+  const handleDelete = (id) => {
+    setTask(tasks.filter((task) => task.id != id));
+  };
   return (
     <ul className="tasks">
       {tasks.map((task) => (
@@ -11,7 +14,9 @@ function Tasks({ tasks }) {
           <div className="task__circle-hover"></div>
           <div className="task__item">
             {task.value}
-            <div className="task__remove">&#10005;</div>
+            <div className="task__remove" onClick={() => handleDelete(task.id)}>
+              &#10005;
+            </div>
           </div>
         </li>
       ))}
