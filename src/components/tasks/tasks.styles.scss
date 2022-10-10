@@ -45,17 +45,17 @@
     border-radius: 50%;
     display: none;
   }
-  &__check {
+  &__input {
     display: none;
   }
-  &__check:checked ~ &__circle {
+  &__input:checked ~ &__circle {
     background-image: linear-gradient(
       to bottom right,
       hsl(192, 100%, 67%),
       hsl(280, 87%, 65%)
     );
   }
-  &__check:checked ~ &__circle-hover {
+  &__input:checked ~ &__circle-hover {
     display: none;
   }
   &__item {
@@ -66,6 +66,11 @@
     position: relative;
     word-break: break-all;
   }
+  &__item-checked {
+    text-decoration: line-through;
+    color: hsl(236, 9%, 61%);
+  }
+
   &__item:hover &__remove {
     display: block;
   }
