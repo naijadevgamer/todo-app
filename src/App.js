@@ -11,6 +11,7 @@ import "./App.scss";
 function App() {
   const [input, setInput] = useState("");
   const [tasks, setTask] = useState([]);
+  const [all, setAll] = useState([]);
 
   return (
     <div className="App">
@@ -22,8 +23,10 @@ function App() {
           setInput={setInput}
           tasks={tasks}
           setTask={setTask}
+          all={all}
+          setAll={setAll}
         />
-        <TaskBox tasks={tasks} setTask={setTask} />
+        <TaskBox tasks={tasks} setTask={setTask} all={all} setAll={setAll} />
         <footer className="footer">Drag and drop to reorder list</footer>
       </div>
     </div>

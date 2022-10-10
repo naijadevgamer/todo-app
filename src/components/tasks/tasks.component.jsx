@@ -2,9 +2,10 @@ import React from "react";
 
 import "./tasks.styles.scss";
 
-function Tasks({ tasks, setTask }) {
+function Tasks({ tasks, setTask, all, setAll }) {
   const handleDelete = (id) => {
     setTask(tasks.filter((task) => task.id !== id));
+    setAll(all.filter((task) => task.id !== id));
   };
   const handleCompleted = (id) => {
     setTask(
@@ -15,7 +16,14 @@ function Tasks({ tasks, setTask }) {
         return task;
       })
     );
-    console.log(tasks);
+    setAll(
+      all.map((task) => {
+        if (task.id === id) {
+          return { ...task, completed: !task.completed };
+        }
+        return task;
+      })
+    );
   };
   return (
     <ul className="tasks">

@@ -1,7 +1,7 @@
 import React from "react";
 import "./search-box.styles.scss";
 
-function SearchBox({ input, setInput, tasks, setTask }) {
+function SearchBox({ input, setInput, tasks, setTask,all,setAll }) {
   const generateKey = () => {
     let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     let totalL = "",
@@ -23,11 +23,14 @@ function SearchBox({ input, setInput, tasks, setTask }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    let key= generateKey();
     if (input.length)
+      
       setTask([
         ...tasks,
-        { value: input, id: generateKey(), completed: false },
+        { value: input, id:key , completed: false },
       ]);
+      setAll([...all, { value: input, id: key, completed: false }]);
     setInput("");
   };
   return (
