@@ -31,7 +31,9 @@ function Tasks({ tasks, setTask, all, setAll }) {
         <li key={task.id} className="task" draggable={true}>
           <input type="checkbox" className="task__input" id={task.id} />
           <label
-            className="task__circle"
+            className={`task__circle ${
+              task.completed ? "task__completed" : ""
+            }`}
             htmlFor={task.id}
             onClick={() => handleCompleted(task.id)}
           >

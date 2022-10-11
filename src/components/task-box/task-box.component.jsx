@@ -5,38 +5,35 @@ import Tasks from "../tasks/tasks.component";
 import "./task-box.styles.scss";
 
 function TaskBox({ tasks, setTask, all, setAll }) {
-  // let handleActive = tasks.filter((task) => task.completed === false);
-  // let handleCompleted = tasks.filter((task) => task.completed === true);
-
-  // function findEvery() {
-  //   const hey = tasks.every((task) => task.completed === false);
-  //   return hey;
-  // }
+  function findEvery() {
+    const hey = tasks.every((task) => task.completed === false);
+    return hey;
+  }
   function handleAll() {
     setTask(all);
   }
   function handleActive() {
-    setTask(all);
-    const active = tasks.filter((task) => task.completed === false);
-    setTask(active);
+    setTask(all.filter((task) => task.completed === false));
   }
   function handleCompleted() {
-    setTask(all);
-    const completed = tasks.filter((task) => task.completed === true);
-
-    // setTimeout(() => {
-    setTask(completed);
-    // }, 500);
+    setTask(all.filter((task) => task.completed === true));
   }
 
   // useEffect(() => {
-  //   // console.log(handleAll);
-  //   // console.log(handleActive);
-  //   // console.log(handleCompleted);
-  //   // console.log(tasks);
-  //   // console.log(findEvery());
-  //   setTask(all);
-  // }, [tasks]);
+  //   handleCompleted();
+  // }, [...all.map((task) => task.completed)]);
+  useEffect(() => {
+    if (!findEvery()) {
+      let age = all.filter((task) => task.completed === false);
+      setTask(age);
+    }
+  }, [...all.map((task) => task.completed)]);
+  useEffect(() => {
+    if (findEvery()) {
+      let age = all.filter((task) => task.completed === true);
+      setTask(age);
+    }
+  }, [...all.map((task) => task.completed)]);
 
   return (
     <div className="task-box">

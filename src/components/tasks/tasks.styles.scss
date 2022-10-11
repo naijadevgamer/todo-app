@@ -48,7 +48,7 @@
   &__input {
     display: none;
   }
-  &__input:checked ~ &__circle {
+  &__completed {
     background-image: linear-gradient(
       to bottom right,
       hsl(192, 100%, 67%),
