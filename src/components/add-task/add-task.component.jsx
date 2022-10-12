@@ -1,7 +1,7 @@
 import React from "react";
-import "./search-box.styles.scss";
+import "./add-task.styles.scss";
 
-function SearchBox({ input, setInput, tasks, setTask,all,setAll }) {
+function AddTask({ input, setInput, tasks, setTask,all,setAll }) {
   const generateKey = () => {
     let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     let totalL = "",
@@ -49,4 +49,4 @@ function SearchBox({ input, setInput, tasks, setTask,all,setAll }) {
   );
 }
 
-export default SearchBox;
+export default AddTask;

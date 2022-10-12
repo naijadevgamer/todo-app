@@ -3,13 +3,14 @@ import { useState } from "react";
 
 import Background from "./components/background/background.component";
 import Header from "./components/header/header.components";
-import SearchBox from "./components/search-box/search-box.component";
+import AddTask from "./components/add-task/add-task.component";
 import TaskBox from "./components/task-box/task-box.component";
 
 import "./App.scss";
 
 function App() {
   const [input, setInput] = useState("");
+  const [filter, setFilter] = useState("all");
   const [tasks, setTask] = useState([]);
   const [all, setAll] = useState([]);
 
@@ -18,7 +19,7 @@ function App() {
       <Background />
       <div className="main">
         <Header />
-        <SearchBox
+        <AddTask
           input={input}
           setInput={setInput}
           tasks={tasks}
@@ -26,7 +27,14 @@ function App() {
           all={all}
           setAll={setAll}
         />
-        <TaskBox tasks={tasks} setTask={setTask} all={all} setAll={setAll} />
+        <TaskBox
+          tasks={tasks}
+          setTask={setTask}
+          all={all}
+          setAll={setAll}
+          filter={filter}
+          setFilter={setFilter}
+        />
         <footer className="footer">Drag and drop to reorder list</footer>
       </div>
     </div>

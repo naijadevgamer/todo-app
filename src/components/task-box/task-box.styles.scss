@@ -37,13 +37,14 @@
     &:hover {
       color: hsl(235, 19%, 35%);
     }
-  }
-  &__active,
-  &__all,
-  &__completed {
+    &--active,
+  &--all,
+  &--completed {
     color: hsl(220, 98%, 61%);
     &:hover {
       color: hsl(220, 98%, 61%);
     }
   }
+  }
+  
 }

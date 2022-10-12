@@ -1,4 +1,6 @@
 import React from "react";
+import { ReactComponent as CrossIcon } from "../../images/icon-cross.svg";
+import { ReactComponent as CheckIcon } from "../../images/icon-check.svg";
 
 import "./tasks.styles.scss";
 
@@ -37,7 +39,7 @@ function Tasks({ tasks, setTask, all, setAll }) {
             htmlFor={task.id}
             onClick={() => handleCompleted(task.id)}
           >
-            {task.completed ? <>&#10003;</> : ""}
+            {task.completed ? <CheckIcon /> : ""}
           </label>
           <div className="task__circle-hover"></div>
           <div
@@ -47,7 +49,7 @@ function Tasks({ tasks, setTask, all, setAll }) {
           >
             {task.value}
             <div className="task__remove" onClick={() => handleDelete(task.id)}>
-              &#10005;
+              <CrossIcon />
             </div>
           </div>
         </li>

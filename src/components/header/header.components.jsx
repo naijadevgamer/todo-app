@@ -1,5 +1,6 @@
 import React from "react";
 import { ReactComponent as MoonIcon } from "../../images/icon-moon.svg";
+// import { ReactComponent as SunIcon } from "../../images/icon-sun.svg";
 
 import "./header.styles.scss";
 

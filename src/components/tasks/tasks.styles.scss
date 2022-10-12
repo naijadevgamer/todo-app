@@ -72,7 +72,9 @@
   }
 
   &__item:hover &__remove {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   &__remove {
     cursor: pointer;
