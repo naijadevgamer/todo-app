@@ -34,17 +34,19 @@
   &__filter {
     font-weight: 700;
     cursor: pointer;
+    border: none;
+    background-color: inherit;
+    color: inherit;
     &:hover {
       color: hsl(235, 19%, 35%);
     }
     &--active,
-  &--all,
-  &--completed {
-    color: hsl(220, 98%, 61%);
-    &:hover {
+    &--all,
+    &--completed {
       color: hsl(220, 98%, 61%);
+      &:hover {
+        color: hsl(220, 98%, 61%);
+      }
     }
   }
-  }
-  
 }
