@@ -1,10 +1,11 @@
 import React from "react";
 import { ReactComponent as CrossIcon } from "../../images/icon-cross.svg";
 import { ReactComponent as CheckIcon } from "../../images/icon-check.svg";
+import { ReactComponent as EmptyIcon } from "../../images/icon-empty.svg";
 
 import "./tasks.styles.scss";
 
-function Tasks({ tasks, setTask, all, setAll }) {
+function Tasks({ tasks, setTask, all, setAll, isEmpty, filter }) {
   const handleDelete = (id) => {
     setTask(tasks.filter((task) => task.id !== id));
     setAll(all.filter((task) => task.id !== id));
@@ -29,31 +30,46 @@ function Tasks({ tasks, setTask, all, setAll }) {
   };
   return (
     <ul className="tasks">
-      {tasks.map((task) => (
-        <li key={task.id} className="task" draggable={true}>
-          <input type="checkbox" className="task__input" id={task.id} />
-          <label
-            className={`task__circle ${
-              task.completed ? "task__completed" : ""
-            }`}
-            htmlFor={task.id}
-            onClick={() => handleCompleted(task.id)}
-          >
-            {task.completed ? <CheckIcon /> : ""}
-          </label>
-          <div className="task__circle-hover"></div>
-          <div
-            className={`task__item ${
-              task.completed ? "task__item-checked" : ""
-            }`}
-          >
-            {task.value}
-            <div className="task__remove" onClick={() => handleDelete(task.id)}>
-              <CrossIcon />
+      {isEmpty === false ? (
+        tasks.map((task) => (
+          <li key={task.id} className="task" draggable={true}>
+            <input type="checkbox" className="task__input" id={task.id} />
+            <div
+              className={`task__circle ${
+                task.completed ? "task__completed" : ""
+              }`}
+              onClick={() => handleCompleted(task.id)}
+            >
+              {task.completed ? <CheckIcon /> : ""}
             </div>
-          </div>
+            <div className="task__circle-hover"></div>
+            <div
+              className={`task__item ${
+                task.completed ? "task__item-checked" : ""
+              }`}
+            >
+              {task.value}
+              <div
+                className="task__remove"
+                onClick={() => handleDelete(task.id)}
+              >
+                <CrossIcon />
+              </div>
+            </div>
+          </li>
+        ))
+      ) : (
+        <li className="task__empty">
+          <EmptyIcon className="task__empty-icon" />
+          <span className="task__empty-text">
+            {filter === "all"
+              ? "All is empty"
+              : filter === "active"
+              ? "active is empty"
+              : "Completed is empty"}
+          </span>
         </li>
-      ))}
+      )}
     </ul>
   );
 }

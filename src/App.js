@@ -15,19 +15,18 @@ function App() {
   const [countActive, setCountActive] = useState(0);
 
   useEffect(() => {
+    function activeCount() {
+      let totalLeft = all.filter((task) => task.completed === false);
+      if (totalLeft.length > 1) {
+        return `${totalLeft.length} items left`;
+      } else if (totalLeft.length === 1) {
+        return `${totalLeft.length} item left`;
+      } else {
+        return "No items left";
+      }
+    }
     setCountActive(activeCount());
   }, [all]);
-
-  function activeCount() {
-    let totalLeft = all.filter((task) => task.completed === false);
-    if (totalLeft.length > 1) {
-      return `${totalLeft.length} items left`;
-    } else if (totalLeft.length === 1) {
-      return `${totalLeft.length} item left`;
-    } else {
-      return "No items left";
-    }
-  }
 
   return (
     <div className="App">
