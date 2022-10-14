@@ -1,6 +1,6 @@
 import React from "react";
 
-function Background() {
+const Background = () => {
   return (
     <div className="background">
       <img
@@ -10,6 +10,6 @@ function Background() {
       />
     </div>
   );
-}
+};
 
 export default Background;

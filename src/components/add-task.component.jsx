@@ -1,6 +1,6 @@
 import React from "react";
 
-function AddTask({ input, setInput, tasks, setTask, all, setAll }) {
+const AddTask = ({ input, setInput, tasks, setTask, all, setAll }) => {
   const generateKey = () => {
     let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     let totalL = "",
@@ -42,6 +42,6 @@ function AddTask({ input, setInput, tasks, setTask, all, setAll }) {
       </form>
     </div>
   );
-}
+};
 
 export default AddTask;

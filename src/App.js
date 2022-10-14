@@ -4,16 +4,18 @@ import Background from "./components/background.component";
 import Header from "./components/header.components";
 import AddTask from "./components/add-task.component";
 import TaskBox from "./components/task-box.component";
+import Footer from "./components/footer.component";
 
-function App() {
+const App = () => {
   const [input, setInput] = useState("");
   const [filter, setFilter] = useState("all");
   const [tasks, setTask] = useState([]);
   const [all, setAll] = useState([]);
   const [countActive, setCountActive] = useState(0);
+  const [isEmpty, setIsEmpty] = useState(true);
 
   useEffect(() => {
-    function activeCount() {
+    const activeCount = () => {
       let totalLeft = all.filter((task) => task.completed === false);
       if (totalLeft.length > 1) {
         return `${totalLeft.length} items left`;
@@ -22,9 +24,16 @@ function App() {
       } else {
         return "No items left";
       }
-    }
+    };
     setCountActive(activeCount());
   }, [all]);
+  useEffect(() => {
+    if (tasks.length) {
+      setIsEmpty(false);
+    } else {
+      setIsEmpty(true);
+    }
+  }, [tasks]);
 
   return (
     <div className="App">
@@ -47,11 +56,12 @@ function App() {
           filter={filter}
           setFilter={setFilter}
           countActive={countActive}
+          isEmpty={isEmpty}
         />
-        <footer className="footer">Drag and drop to reorder list</footer>
+        <Footer />
       </div>
     </div>
   );
-}
+};
 
 export default App;

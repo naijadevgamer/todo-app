@@ -3,12 +3,12 @@ import { ReactComponent as CrossIcon } from "../images/icon-cross.svg";
 import { ReactComponent as CheckIcon } from "../images/icon-check.svg";
 import { ReactComponent as EmptyIcon } from "../images/icon-empty.svg";
 
-function Tasks({ tasks, setTask, all, setAll, isEmpty, filter }) {
+const Tasks = ({ tasks, setTask, all, setAll, isEmpty, filter }) => {
   const handleDelete = (id) => {
     setTask(tasks.filter((task) => task.id !== id));
     setAll(all.filter((task) => task.id !== id));
   };
-  const handleCompleted = (id) => {
+  const handleToggleCompleted = (id) => {
     setTask(
       tasks.map((task) => {
         if (task.id === id) {
@@ -36,7 +36,7 @@ function Tasks({ tasks, setTask, all, setAll, isEmpty, filter }) {
               className={`task__circle ${
                 task.completed ? "task__completed" : ""
               }`}
-              onClick={() => handleCompleted(task.id)}
+              onClick={() => handleToggleCompleted(task.id)}
             >
               {task.completed ? <CheckIcon /> : ""}
             </div>
@@ -61,15 +61,15 @@ function Tasks({ tasks, setTask, all, setAll, isEmpty, filter }) {
           <EmptyIcon className="task__empty-icon" />
           <span className="task__empty-text">
             {filter === "all"
-              ? "All is empty"
+              ? "Enter a new todo"
               : filter === "active"
-              ? "active is empty"
-              : "Completed is empty"}
+              ? "Well done! You have no active task left"
+              : "No task is completed yet"}
           </span>
         </li>
       )}
     </ul>
   );
-}
+};
 
 export default Tasks;
