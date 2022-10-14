@@ -37,7 +37,7 @@ const App = () => {
 
   return (
     <div className="App">
-      {/* <Background /> */}
+      <Background />
       <main className="main">
         <Header />
         <AddTask
