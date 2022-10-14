@@ -1,7 +1,6 @@
 import React from "react";
-import "./add-task.styles.scss";
 
-function AddTask({ input, setInput, tasks, setTask,all,setAll }) {
+function AddTask({ input, setInput, tasks, setTask, all, setAll }) {
   const generateKey = () => {
     let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     let totalL = "",
@@ -23,14 +22,10 @@ function AddTask({ input, setInput, tasks, setTask,all,setAll }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let key= generateKey();
+    let key = generateKey();
     if (input.length)
-      
-      setTask([
-        ...tasks,
-        { value: input, id:key , completed: false },
-      ]);
-      setAll([...all, { value: input, id: key, completed: false }]);
+      setTask([...tasks, { value: input, id: key, completed: false }]);
+    setAll([...all, { value: input, id: key, completed: false }]);
     setInput("");
   };
   return (

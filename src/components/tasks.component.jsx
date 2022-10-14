@@ -1,9 +1,7 @@
 import React from "react";
-import { ReactComponent as CrossIcon } from "../../images/icon-cross.svg";
-import { ReactComponent as CheckIcon } from "../../images/icon-check.svg";
-import { ReactComponent as EmptyIcon } from "../../images/icon-empty.svg";
-
-import "./tasks.styles.scss";
+import { ReactComponent as CrossIcon } from "../images/icon-cross.svg";
+import { ReactComponent as CheckIcon } from "../images/icon-check.svg";
+import { ReactComponent as EmptyIcon } from "../images/icon-empty.svg";
 
 function Tasks({ tasks, setTask, all, setAll, isEmpty, filter }) {
   const handleDelete = (id) => {

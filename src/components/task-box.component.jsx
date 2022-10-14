@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import Tasks from "../tasks/tasks.component";
-
-import "./task-box.styles.scss";
+import Tasks from "./tasks.component";
 
 function TaskBox({
   tasks,

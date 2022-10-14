@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-import Background from "./components/background/background.component";
-import Header from "./components/header/header.components";
-import AddTask from "./components/add-task/add-task.component";
-import TaskBox from "./components/task-box/task-box.component";
-
-import "./App.scss";
+import Background from "./components/background.component";
+import Header from "./components/header.components";
+import AddTask from "./components/add-task.component";
+import TaskBox from "./components/task-box.component";
 
 function App() {
   const [input, setInput] = useState("");

@@ -8,19 +8,19 @@
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
-  background-color: white;
-  border-bottom: 2px solid hsl(236, 33%, 92%);
+  background-color: $white;
+  border-bottom: 2px solid $very-light-grayish-blue;
   list-style: none;
   position: relative;
   &__circle {
     border-radius: 50%;
     height: 2.5rem;
     width: 2.5rem;
-    border: hsl(233, 11%, 84%) 1px solid;
+    border: $light-grayish-blue 1px solid;
     margin-right: 2rem;
     z-index: 2;
-    background-color: white;
-    color: white;
+    background-color: $white;
+    color: $white;
     position: relative;
     display: flex;
     align-items: center;
@@ -37,11 +37,7 @@
     transform: scale(1.1);
     height: 2.5rem;
     width: 2.5rem;
-    background-image: linear-gradient(
-      to bottom right,
-      hsl(192, 100%, 67%),
-      hsl(280, 87%, 65%)
-    );
+    background-image: $check-background;
     border-radius: 50%;
     display: none;
   }
@@ -49,11 +45,7 @@
     display: none;
   }
   &__completed {
-    background-image: linear-gradient(
-      to bottom right,
-      hsl(192, 100%, 67%),
-      hsl(280, 87%, 65%)
-    );
+    background-image: $check-background;
   }
   &__input:checked ~ &__circle-hover {
     display: none;
@@ -68,7 +60,7 @@
   }
   &__item-checked {
     text-decoration: line-through;
-    color: hsl(236, 9%, 61%);
+    color: $dark-grayish-blue;
   }
 
   &__item:hover &__remove {
@@ -91,10 +83,10 @@
     align-items: center;
     padding: 1rem;
     row-gap: 1rem;
-    border-bottom: hsl(233, 11%, 84%) 1px solid;
+    border-bottom: $light-grayish-blue 1px solid;
   }
   &__empty-icon {
-    fill: blue;
+    fill: $bright-blue;
     size: 50%;
   }
 }

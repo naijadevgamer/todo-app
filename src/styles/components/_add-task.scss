@@ -5,13 +5,13 @@
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
-  background-color: white;
+  background-color: $white;
   border-radius: 6px;
   &__circle {
     border-radius: 50%;
     height: 2.5rem;
     width: 2.5rem;
-    border: hsl(233, 11%, 84%) 1px solid;
+    border: $light-grayish-blue 1px solid;
     margin-right: 2rem;
   }
   &__form {
@@ -26,7 +26,7 @@
     border: none;
     font-family: inherit;
     font-size: 2rem;
-    caret-color: hsl(220, 98%, 61%);
+    caret-color: $bright-blue;
     background-color: inherit;
     color: inherit;
     &:focus {

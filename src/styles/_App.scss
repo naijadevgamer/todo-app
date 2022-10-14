@@ -1,6 +1,6 @@
 .App {
   min-height: 100vh;
-  color: hsl(235, 19%, 35%);
+  color: $very-dark-grayish-blue;
 }
 .main {
   position: absolute;
@@ -17,5 +17,5 @@
   margin-top: 6rem;
   margin-bottom: 5rem;
   font-size: 1.6rem;
-  color: hsl(236, 9%, 61%);
+  color: $dark-grayish-blue;
 }

@@ -1,11 +1,3 @@
-$color-primary: hsl(220, 98%, 61%);
-$color-gradient: linear-gradient(
-  to right,
-  hsl(192, 100%, 67%),
-  hsl(280, 87%, 65%)
-);
-$light-grayish-Blue: hsl(233, 11%, 84%);
-$dark-Grayish-Blue: hsl(236, 9%, 61%);
 *,
 *::after,
 *::before {
@@ -36,6 +28,6 @@ body {
   font-size: 1.8rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: hsl(0, 0%, 98%);
+  background-color: $very-light-gray;
   min-height: 100vh;
 }
