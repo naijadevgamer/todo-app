@@ -61,7 +61,7 @@ const Tasks = ({ tasks, setTask, all, setAll, isEmpty, filter }) => {
           <EmptyIcon className="task__empty-icon" />
           <span className="task__empty-text">
             {filter === "all"
-              ? "Enter a new todo"
+              ? "No task found"
               : filter === "active"
               ? "Well done! You have no active task left"
               : "No task is completed yet"}

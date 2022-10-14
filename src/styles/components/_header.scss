@@ -5,6 +5,13 @@
   &__weather-icon {
     margin-left: auto;
     cursor: pointer;
+    transform: rotate(0deg);
+    transition: all 0.5s;
+    // opacity: 1;
+    &:active {
+      transform: rotate(360deg);
+      // opacity: 0.5;
+    }
   }
   &__logo {
     letter-spacing: 1.5rem;

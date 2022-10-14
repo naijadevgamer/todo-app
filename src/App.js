@@ -13,6 +13,7 @@ const App = () => {
   const [all, setAll] = useState([]);
   const [countActive, setCountActive] = useState(0);
   const [isEmpty, setIsEmpty] = useState(true);
+  const [themeLight, setThemeLight] = useState(true);
 
   useEffect(() => {
     const activeCount = () => {
@@ -35,11 +36,21 @@ const App = () => {
     }
   }, [tasks]);
 
+  const body = document.body;
+  useEffect(() => {
+    if (!themeLight) {
+      body.style.backgroundColor = "hsl(235, 21%, 11%)";
+      console.log(body);
+    } else {
+      body.style.backgroundColor = "hsl(0, 0%, 98%)";
+    }
+  }, [themeLight]);
+
   return (
     <div className="App">
-      <Background />
+      <Background themeLight={themeLight} />
       <main className="main">
-        <Header />
+        <Header themeLight={themeLight} setThemeLight={setThemeLight} />
         <AddTask
           input={input}
           setInput={setInput}
