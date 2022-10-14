@@ -1,13 +1,21 @@
 .App {
   min-height: 100vh;
   color: $very-dark-grayish-blue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // flex-direction: column;
 }
 .main {
-  position: absolute;
-  top: 7.5rem;
-  left: 50%;
-  transform: translateX(-50%);
+  // position: absolute;
+  // top: 7.5rem;
+  // left: 50%;
+  background-color: red;
+  // transform: translateX(-50%);
+  max-width: 58rem;
   width: 58rem;
+  margin: 2rem;
+  // margin: 0 2rem;
   display: flex;
   flex-direction: column;
 }

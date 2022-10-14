@@ -37,8 +37,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <Background />
-      <div className="main">
+      {/* <Background /> */}
+      <main className="main">
         <Header />
         <AddTask
           input={input}
@@ -59,7 +59,7 @@ const App = () => {
           isEmpty={isEmpty}
         />
         <Footer />
-      </div>
+      </main>
     </div>
   );
 };
