@@ -36,18 +36,15 @@ const App = () => {
     }
   }, [tasks]);
 
-  const body = document.body;
   useEffect(() => {
-    if (!themeLight) {
-      body.style.backgroundColor = "hsl(235, 21%, 11%)";
-      console.log(body);
-    } else {
-      body.style.backgroundColor = "hsl(0, 0%, 98%)";
-    }
+    const body = document.body;
+    themeLight
+      ? (body.style.backgroundColor = "hsl(0, 0%, 98%)")
+      : (body.style.backgroundColor = "hsl(235, 21%, 11%)");
   }, [themeLight]);
 
   return (
-    <div className="App">
+    <div className="App" data-theme={themeLight ? "" : "dark"}>
       <Background themeLight={themeLight} />
       <main className="main">
         <Header themeLight={themeLight} setThemeLight={setThemeLight} />

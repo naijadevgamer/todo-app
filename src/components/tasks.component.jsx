@@ -31,7 +31,6 @@ const Tasks = ({ tasks, setTask, all, setAll, isEmpty, filter }) => {
       {isEmpty === false ? (
         tasks.map((task) => (
           <li key={task.id} className="task" draggable={true}>
-            <input type="checkbox" className="task__input" id={task.id} />
             <div
               className={`task__circle ${
                 task.completed ? "task__completed" : ""
@@ -51,7 +50,7 @@ const Tasks = ({ tasks, setTask, all, setAll, isEmpty, filter }) => {
                 className="task__remove"
                 onClick={() => handleDelete(task.id)}
               >
-                <CrossIcon />
+                <CrossIcon className="task__remove-icon" />
               </div>
             </div>
           </li>

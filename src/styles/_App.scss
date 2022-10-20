@@ -1,6 +1,6 @@
 .App {
   min-height: 100vh;
-  color: $very-dark-grayish-blue;
+  color: var(--text-primary);
   display: flex;
   align-items: center;
   justify-content: space-between;

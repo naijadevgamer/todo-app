@@ -6,11 +6,9 @@
     margin-left: auto;
     cursor: pointer;
     transform: rotate(0deg);
-    transition: all 0.5s;
-    // opacity: 1;
+    transition: 0.3s ease;
     &:active {
-      transform: rotate(360deg);
-      // opacity: 0.5;
+      transform: rotate(200deg);
     }
   }
   &__logo {
@@ -18,6 +16,6 @@
     text-transform: uppercase;
     font-weight: 700;
     font-size: 4rem;
-    color: $very-light-gray;
+    color: white;
   }
 }

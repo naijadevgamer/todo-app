@@ -5,7 +5,8 @@
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
-  background-color: $white;
+  background-color: var(--background-inner);
+  transition: 0.3s ease;
   border-radius: 6px;
   box-shadow: 0rem 1rem 1rem rgba(rgb(0, 0, 0), 0.1);
 
@@ -13,7 +14,8 @@
     border-radius: 50%;
     height: 2.5rem;
     width: 2.5rem;
-    border: $light-grayish-blue 1px solid;
+    border: var(--circle-border) 1px solid;
+    transition: 0.3s ease;
     margin-right: 2rem;
   }
   &__form {
@@ -33,6 +35,9 @@
     color: inherit;
     &:focus {
       outline: none;
+    }
+    &::placeholder {
+      color: inherit;
     }
   }
 }

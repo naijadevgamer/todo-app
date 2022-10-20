@@ -8,19 +8,20 @@
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
-  background-color: $white;
-  border-bottom: 2px solid $very-light-grayish-blue;
+  border-bottom: 2px solid var(--line-border);
+  transition: border-bottom 0.3s ease;
   list-style: none;
   position: relative;
   &__circle {
     border-radius: 50%;
     height: 2.5rem;
     width: 2.5rem;
-    border: $light-grayish-blue 1px solid;
+    border: var(--circle-border) 1px solid;
     margin-right: 2rem;
     z-index: 2;
-    background-color: $white;
-    color: $white;
+    background-color: var(--background-inner);
+    color: white;
+    transition: 0.3s ease;
     position: relative;
     display: flex;
     align-items: center;
@@ -31,6 +32,7 @@
   }
   &__circle:hover + &__circle-hover {
     display: block;
+    transition: 0.3s ease;
   }
   &__circle-hover {
     position: absolute;
@@ -40,15 +42,11 @@
     background-image: $check-background;
     border-radius: 50%;
     display: none;
-  }
-  &__input {
-    display: none;
+    transition: 0.3s ease;
   }
   &__completed {
     background-image: $check-background;
-  }
-  &__input:checked ~ &__circle-hover {
-    display: none;
+    transition: 0.3s ease;
   }
   &__item {
     width: calc(100% - 5rem);
@@ -60,7 +58,8 @@
   }
   &__item-checked {
     text-decoration: line-through;
-    color: $dark-grayish-blue;
+    color: var(--text-secondary);
+    transition: 0.3s ease;
   }
 
   &__item:hover &__remove {
@@ -76,18 +75,21 @@
     transform: translateY(-50%);
     display: none;
     font-size: 2.5rem;
+    font-weight: 700;
   }
   &__empty {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: $very-dark-grayish-blue;
+    color: var(--text-primary);
     font-size: 1.6rem;
     padding: 1rem;
     row-gap: 1rem;
-    border-bottom: $light-grayish-blue 1px solid;
+    border-bottom: var(--line-border) 1px solid;
+    transition: 0.3s ease;
   }
   &__empty-icon {
+    transition: 0.3s ease;
     fill: $bright-blue;
     height: 3rem;
     width: 3rem;
