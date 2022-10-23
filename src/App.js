@@ -7,24 +7,27 @@ import TaskBox from "./components/task-box.component";
 import Footer from "./components/footer.component";
 
 const App = () => {
-  // const storedTask = JSON.parse(sessionStorage.getItem("allTask"));
-  // const storedTheme = Boolean(sessionStorage.getItem("theme"));
-
   const [input, setInput] = useState("");
   const [filter, setFilter] = useState("all");
   const [tasks, setTask] = useState([]);
-  const [all, setAll] = useState([]);
+  const [all, setAll] = useState(() => {
+    const storedTask = JSON.parse(localStorage.getItem("All_TASK"));
+    return storedTask || [];
+  });
   const [countActive, setCountActive] = useState(0);
   const [isEmpty, setIsEmpty] = useState(true);
-  const [themeLight, setThemeLight] = useState(true);
+  const [themeLight, setThemeLight] = useState(() => {
+    const storedTheme = JSON.parse(localStorage.getItem("THEME"));
+    return storedTheme === null ? true : storedTheme.theme;
+  });
 
-  // useEffect(() => {
-  //   sessionStorage.setItem("allTask", JSON.stringify(all));
-  // }, [all]);
-  // useEffect(() => {
-  //   sessionStorage.setItem("theme", themeLight);
-  //   console.log(storedTheme);
-  // }, [themeLight]);
+  useEffect(() => {
+    localStorage.setItem("All_TASK", JSON.stringify(all));
+  }, [all]);
+
+  useEffect(() => {
+    localStorage.setItem("THEME", JSON.stringify({ theme: themeLight }));
+  }, [themeLight]);
 
   useEffect(() => {
     const activeCount = () => {

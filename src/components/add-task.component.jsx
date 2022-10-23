@@ -23,9 +23,10 @@ const AddTask = ({ input, setInput, tasks, setTask, all, setAll }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     let key = generateKey();
-    if (input.length)
+    if (input.length) {
       setTask([...tasks, { value: input, id: key, completed: false }]);
-    setAll([...all, { value: input, id: key, completed: false }]);
+      setAll([...all, { value: input, id: key, completed: false }]);
+    }
     setInput("");
   };
   return (
