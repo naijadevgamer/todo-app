@@ -1,8 +1,13 @@
 import React from "react";
 
-const FilterBox = ({ handleActive, handleAll, handleCompleted, filter }) => {
+const FilterBoxPhone = ({
+  handleActive,
+  handleAll,
+  handleCompleted,
+  filter,
+}) => {
   return (
-    <li className="filter-box">
+    <li className="filter-box-phone">
       <button
         className={`filter-box__filter ${
           filter === "all" ? "filter-box__filter--all" : ""
@@ -31,4 +36,4 @@ const FilterBox = ({ handleActive, handleAll, handleCompleted, filter }) => {
   );
 };
 
-export default FilterBox;
+export default FilterBoxPhone;

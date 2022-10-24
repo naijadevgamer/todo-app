@@ -5,6 +5,7 @@ import Header from "./components/header.components";
 import AddTask from "./components/add-task.component";
 import TaskBox from "./components/task-box.component";
 import Footer from "./components/footer.component";
+import FilterBoxPhone from "./components/filter-box-phone.component";
 
 const App = () => {
   const [input, setInput] = useState("");
@@ -20,6 +21,19 @@ const App = () => {
     const storedTheme = JSON.parse(localStorage.getItem("THEME"));
     return storedTheme === null ? true : storedTheme.theme;
   });
+
+  const handleAll = () => {
+    setTask(all);
+    setFilter("all");
+  };
+  const handleActive = () => {
+    setTask(all.filter((task) => task.completed === false));
+    setFilter("active");
+  };
+  const handleCompleted = () => {
+    setTask(all.filter((task) => task.completed === true));
+    setFilter("completed");
+  };
 
   useEffect(() => {
     localStorage.setItem("All_TASK", JSON.stringify(all));
@@ -76,9 +90,17 @@ const App = () => {
           all={all}
           setAll={setAll}
           filter={filter}
-          setFilter={setFilter}
+          handleAll={handleAll}
+          handleActive={handleActive}
+          handleCompleted={handleCompleted}
           countActive={countActive}
           isEmpty={isEmpty}
+        />
+        <FilterBoxPhone
+          handleAll={handleAll}
+          handleActive={handleActive}
+          handleCompleted={handleCompleted}
+          filter={filter}
         />
         <Footer />
       </main>

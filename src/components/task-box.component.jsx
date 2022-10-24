@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 
 import LogBox from "./log-box.component";
-
 import Tasks from "./tasks.component";
 
 const TaskBox = ({
@@ -10,22 +9,12 @@ const TaskBox = ({
   all,
   setAll,
   filter,
-  setFilter,
   countActive,
   isEmpty,
+  handleActive,
+  handleAll,
+  handleCompleted,
 }) => {
-  const handleAll = () => {
-    setTask(all);
-    setFilter("all");
-  };
-  const handleActive = () => {
-    setTask(all.filter((task) => task.completed === false));
-    setFilter("active");
-  };
-  const handleCompleted = () => {
-    setTask(all.filter((task) => task.completed === true));
-    setFilter("completed");
-  };
   const clearCompleted = () => {
     setAll(all.filter((task) => task.completed === false));
     setTask(all.filter((task) => task.completed === false));

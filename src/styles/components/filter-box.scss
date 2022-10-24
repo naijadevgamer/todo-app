@@ -1,0 +1,62 @@
+.filter-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 35%;
+  @include respond(phone) {
+    display: none;
+  }
+
+  &__filter {
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    background-color: inherit;
+    color: inherit;
+    font-size: 1.6rem;
+    transition: 0.3s ease;
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+    &:hover {
+      color: var(--text-secondary-hover);
+      transition: 0.3s ease;
+    }
+    &--active,
+    &--all,
+    &--completed {
+      color: $bright-blue;
+      transition: 0.3s ease;
+      &:hover {
+        color: $bright-blue;
+      }
+    }
+  }
+}
+
+.filter-box-phone {
+  margin-top: 3.3rem;
+  border-radius: 6px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  display: none;
+  background-color: var(--background-inner);
+  padding: 1rem 20%;
+  height: 5.5rem;
+  box-shadow: 0rem 1rem 3rem rgba(rgb(0, 0, 0), 0.2);
+  color: var(--text-secondary);
+  transition: 0.3s ease;
+  @include respond(phone) {
+    display: flex;
+  }
+}
+
+// .filter-box--desktop {
+
+// }
+// .filter-box--phone {
+//   @include respond(phone) {
+//     display: block;
+//   }
+// }

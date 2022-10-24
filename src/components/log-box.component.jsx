@@ -11,18 +11,16 @@ const LogBox = ({
   filter,
 }) => {
   return (
-    <ul className="task-box__log-box">
-      <li className="task-box__log task-box__log--items-left">{countActive}</li>
+    <ul className="log-box">
+      <li className="log-box__log">{countActive}</li>
       <FilterBox
+        className="filter-box--desktop"
         handleAll={handleAll}
         handleActive={handleActive}
         handleCompleted={handleCompleted}
         filter={filter}
       />
-      <li
-        className="task-box__log task-box__log--clear"
-        onClick={clearCompleted}
-      >
+      <li className="log-box__log log-box__log--clear" onClick={clearCompleted}>
         clear Completed
       </li>
     </ul>

@@ -1,0 +1,20 @@
+.log-box {
+  color: var(--text-secondary);
+  transition: 0.3s ease;
+  padding: 1rem 2rem;
+  height: 5.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  &__log {
+    list-style: none;
+    &--clear {
+      cursor: pointer;
+      &:hover {
+        color: var(--text-secondary-hover);
+        transition: 0.3s ease;
+      }
+    }
+  }
+}
