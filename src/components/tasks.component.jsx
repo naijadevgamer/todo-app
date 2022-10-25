@@ -26,11 +26,36 @@ const Tasks = ({ tasks, setTask, all, setAll, isEmpty, filter }) => {
       })
     );
   };
+  const handleDragStart = (id) => {
+    // e.target.style.opacity = "1";
+    tasks.filter((task) => task.id !== id);
+  };
+  const handleDragEnd = (id) => {
+    tasks.map((task) => {
+      setTask([...task]);
+      return task;
+    });
+  };
+  const handleDragOver = (e, id) => {
+    e.preventDefault();
+    console.log("dragover");
+  };
+  const handleDragCapture = (e) => {
+    e.target.style.opacity = "0";
+  };
+
   return (
-    <ul className="tasks">
+    <ul className="tasks" onDragOver={handleDragOver}>
       {isEmpty === false ? (
         tasks.map((task) => (
-          <li key={task.id} className="task" draggable={true}>
+          <li
+            key={task.id}
+            className="task"
+            draggable={true}
+            onDragStart={handleDragStart}
+            onDragEnd={handleDragEnd}
+            onDragCapture={handleDragCapture}
+          >
             <div
               className={`task__circle ${
                 task.completed ? "task__completed" : ""

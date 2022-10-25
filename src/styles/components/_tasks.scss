@@ -3,6 +3,7 @@
   flex-direction: column;
 }
 .task {
+  cursor: move;
   width: 100%;
   min-height: 6.3rem;
   padding: 1rem 2rem;
@@ -12,6 +13,7 @@
   transition: border-bottom 0.3s ease;
   list-style: none;
   position: relative;
+  background-color: pink;
   &__circle {
     border-radius: 50%;
     height: 2.5rem;
