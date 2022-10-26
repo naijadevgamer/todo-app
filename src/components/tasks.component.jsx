@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { ReactComponent as CrossIcon } from "../images/icon-cross.svg";
 import { ReactComponent as CheckIcon } from "../images/icon-check.svg";
 import { ReactComponent as EmptyIcon } from "../images/icon-empty.svg";
@@ -30,39 +30,63 @@ const Tasks = ({ tasks, setTask, all, setAll, isEmpty, filter }) => {
     );
   };
 
-  // handle drag start
-  const handleDragStart = (e, id) => {
-    console.log("drag started", id);
+  const dragItem = useRef(null);
+  const dragOverItem = useRef(null);
+  const handleSort = () => {
+    // duplicate tasks
+    let _taskItems = [...tasks];
+
+    //remove and save the drag item content
+    const draggedItemContent = _taskItems.splice(dragItem.current, 1)[0];
+
+    // switch position
+    _taskItems.splice(dragOverItem.current, 0, draggedItemContent);
+
+    //reset the position ref
+    dragItem.current = null;
+    dragOverItem.current = null;
+
+    //update the actual array
+    setTask(_taskItems);
   };
+
+  // handle drag start
+  // const handleDragStart = (e, id) => {
+  //   console.log(dragItem.current);
+  // };
 
   //handle drag enter
-  const handleDragEnter = (e, id) => {
-    console.log("drag entered", id);
-  };
+  // const handleDragEnter = (e, id) => {
+  //   console.log("drag entered", id);
+  // };
 
   //handle drag end
-  const handleDragEnd = (e, id) => {
-    console.log("drag ended", id);
+  const handleDragEnd = (e) => {
+    e.target.style.opacity = "1";
   };
   // const handleDragOver = (e, id) => {
   //   e.preventDefault();
   //   console.log("dragover");
   // };
-  // const handleDragCapture = (e) => {
-  //   e.target.style.opacity = "0";
-  // };
+  const handleDragCapture = (e) => {
+    e.target.style.opacity = "0";
+  };
 
   return (
     <ul className="tasks">
       {isEmpty === false ? (
-        tasks.map((task) => (
+        tasks.map((task, index) => (
           <li
             key={task.id}
             className="task"
             draggable
-            onDragStart={(e) => handleDragStart(e, task.id)}
-            onDragEnd={(e) => handleDragEnd(e, task.id)}
-            onDragEnter={(e) => handleDragEnter(e, task.id)}
+            onDragStart={() => (dragItem.current = index)}
+            onDragEnd={(e) => {
+              handleSort();
+              handleDragEnd(e);
+            }}
+            onDragEnter={() => (dragOverItem.current = index)}
+            onDragCapture={handleDragCapture}
           >
             <div
               className={`task__circle ${
