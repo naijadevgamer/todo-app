@@ -4,10 +4,13 @@ import { ReactComponent as CheckIcon } from "../images/icon-check.svg";
 import { ReactComponent as EmptyIcon } from "../images/icon-empty.svg";
 
 const Tasks = ({ tasks, setTask, all, setAll, isEmpty, filter }) => {
+  // handle delete task item
   const handleDelete = (id) => {
     setTask(tasks.filter((task) => task.id !== id));
     setAll(all.filter((task) => task.id !== id));
   };
+
+  // handle toggle completed
   const handleToggleCompleted = (id) => {
     setTask(
       tasks.map((task) => {
@@ -26,25 +29,20 @@ const Tasks = ({ tasks, setTask, all, setAll, isEmpty, filter }) => {
       })
     );
   };
-  const handleDragStart = (id) => {
-    // e.target.style.opacity = "1";
-    setTask(tasks.filter((task) => task.id !== id));
-    console.log(id);
-    all
-      .filter((task) => task.id === id)
-      .map((task) => {
-        console.log(task);
-      });
+
+  // handle drag start
+  const handleDragStart = (e, id) => {
+    console.log("drag started", id);
   };
-  const handleDragEnd = (id) => {
-    setAll(
-      ...tasks,
-      all
-        .filter((task) => task.id === id)
-        .map((task) => {
-          return task;
-        })
-    );
+
+  //handle drag enter
+  const handleDragEnter = (e, id) => {
+    console.log("drag entered", id);
+  };
+
+  //handle drag end
+  const handleDragEnd = (e, id) => {
+    console.log("drag ended", id);
   };
   // const handleDragOver = (e, id) => {
   //   e.preventDefault();
@@ -62,9 +60,9 @@ const Tasks = ({ tasks, setTask, all, setAll, isEmpty, filter }) => {
             key={task.id}
             className="task"
             draggable
-            onDragStart={() => handleDragStart(task.id)}
-            onDragEnd={() => handleDragEnd(task.id)}
-            // onDragCapture={handleDragCapture}
+            onDragStart={(e) => handleDragStart(e, task.id)}
+            onDragEnd={(e) => handleDragEnd(e, task.id)}
+            onDragEnter={(e) => handleDragEnter(e, task.id)}
           >
             <div
               className={`task__circle ${

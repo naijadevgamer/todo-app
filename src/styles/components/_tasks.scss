@@ -13,7 +13,6 @@
   transition: border-bottom 0.3s ease;
   list-style: none;
   position: relative;
-  background-color: pink;
   &__circle {
     border-radius: 50%;
     height: 2.5rem;
@@ -78,6 +77,9 @@
     display: none;
     font-size: 2.5rem;
     font-weight: 700;
+  }
+  &__remove-icon {
+    fill: var(--text-secondary);
   }
   &__empty {
     display: flex;
