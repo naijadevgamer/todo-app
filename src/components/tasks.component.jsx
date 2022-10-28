@@ -50,24 +50,12 @@ const Tasks = ({ tasks, setTask, all, setAll, isEmpty, filter }) => {
     setTask(_taskItems);
   };
 
-  // handle drag start
-  // const handleDragStart = (e, id) => {
-  //   console.log(dragItem.current);
-  // };
-
-  //handle drag enter
-  // const handleDragEnter = (e, id) => {
-  //   console.log("drag entered", id);
-  // };
-
   //handle drag end
   const handleDragEnd = (e) => {
     e.target.style.opacity = "1";
   };
-  // const handleDragOver = (e, id) => {
-  //   e.preventDefault();
-  //   console.log("dragover");
-  // };
+
+  //handle drag Capture
   const handleDragCapture = (e) => {
     e.target.style.opacity = "0";
   };
