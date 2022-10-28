@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+import React from "react";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { ReactComponent as CrossIcon } from "../images/icon-cross.svg";
 import { ReactComponent as CheckIcon } from "../images/icon-check.svg";
 import { ReactComponent as EmptyIcon } from "../images/icon-empty.svg";
@@ -30,89 +31,99 @@ const Tasks = ({ tasks, setTask, all, setAll, isEmpty, filter }) => {
     );
   };
 
-  const dragItem = useRef(null);
-  const dragOverItem = useRef(null);
-  const handleSort = () => {
-    // duplicate tasks
-    let _taskItems = [...tasks];
+  // const dragItem = useRef(null);
+  // const dragOverItem = useRef(null);
+  // const handleSort = () => {
+  //   // duplicate tasks
+  //   let _taskItems = [...tasks];
 
-    //remove and save the drag item content
-    const draggedItemContent = _taskItems.splice(dragItem.current, 1)[0];
+  //   //remove and save the drag item content
+  //   const draggedItemContent = _taskItems.splice(dragItem.current, 1)[0];
 
-    // switch position
-    _taskItems.splice(dragOverItem.current, 0, draggedItemContent);
+  //   // switch position
+  //   _taskItems.splice(dragOverItem.current, 0, draggedItemContent);
 
-    //reset the position ref
-    dragItem.current = null;
-    dragOverItem.current = null;
+  //   //reset the position ref
+  //   dragItem.current = null;
+  //   dragOverItem.current = null;
 
-    //update the actual array
-    setTask(_taskItems);
-  };
+  //   //update the actual array
+  //   setTask(_taskItems);
+  // };
 
-  //handle drag end
-  const handleDragEnd = (e) => {
-    e.target.style.opacity = "1";
-  };
+  // //handle drag end
+  // const handleDragEnd = (e) => {
+  //   e.target.style.opacity = "1";
+  // };
 
-  //handle drag Capture
-  const handleDragCapture = (e) => {
-    e.target.style.opacity = "0";
-  };
+  // //handle drag Capture
+  // const handleDragCapture = (e) => {
+  //   e.target.style.opacity = "0";
+  // };
 
   return (
-    <ul className="tasks">
-      {isEmpty === false ? (
-        tasks.map((task, index) => (
-          <li
-            key={task.id}
-            className="task"
-            draggable
-            onDragStart={() => (dragItem.current = index)}
-            onDragEnd={(e) => {
-              handleSort();
-              handleDragEnd(e);
-            }}
-            onDragEnter={() => (dragOverItem.current = index)}
-            onDragCapture={handleDragCapture}
+    <DragDropContext>
+      <Droppable droppableId="character">
+        {(provided) => (
+          <ul
+            className="tasks"
+            {...provided.droppableProps}
+            ref={provided.innerRef}
           >
-            <div
-              className={`task__circle ${
-                task.completed ? "task__completed" : ""
-              }`}
-              onClick={() => handleToggleCompleted(task.id)}
-            >
-              {task.completed ? <CheckIcon /> : ""}
-            </div>
-            <div className="task__circle-hover"></div>
-            <div
-              className={`task__item ${
-                task.completed ? "task__item-checked" : ""
-              }`}
-            >
-              {task.value}
-              <div
-                className="task__remove"
-                onClick={() => handleDelete(task.id)}
-              >
-                <CrossIcon className="task__remove-icon" />
-              </div>
-            </div>
-          </li>
-        ))
-      ) : (
-        <li className="task__empty">
-          <EmptyIcon className="task__empty-icon" />
-          <span className="task__empty-text">
-            {filter === "all"
-              ? "No task found"
-              : filter === "active"
-              ? "Well done! You have no active task left"
-              : "No task is completed yet"}
-          </span>
-        </li>
-      )}
-    </ul>
+            {isEmpty === false ? (
+              tasks.map((task) => (
+                <li
+                  key={task.id}
+                  className="task"
+                  draggable
+                  // onDragStart={() => (dragItem.current = index)}
+                  // onDragEnd={(e) => {
+                  //   handleSort();
+                  //   handleDragEnd(e);
+                  // }}
+                  // onDragEnter={() => (dragOverItem.current = index)}
+                  // onDragCapture={handleDragCapture}
+                >
+                  <div
+                    className={`task__circle ${
+                      task.completed ? "task__completed" : ""
+                    }`}
+                    onClick={() => handleToggleCompleted(task.id)}
+                  >
+                    {task.completed ? <CheckIcon /> : ""}
+                  </div>
+                  <div className="task__circle-hover"></div>
+                  <div
+                    className={`task__item ${
+                      task.completed ? "task__item-checked" : ""
+                    }`}
+                  >
+                    {task.value}
+                    <div
+                      className="task__remove"
+                      onClick={() => handleDelete(task.id)}
+                    >
+                      <CrossIcon className="task__remove-icon" />
+                    </div>
+                  </div>
+                </li>
+              ))
+            ) : (
+              <li className="task__empty">
+                <EmptyIcon className="task__empty-icon" />
+                <span className="task__empty-text">
+                  {filter === "all"
+                    ? "No task found"
+                    : filter === "active"
+                    ? "Well done! You have no active task left"
+                    : "No task is completed yet"}
+                </span>
+              </li>
+            )}
+          </ul>
+        )}
+      </Droppable>
+    </DragDropContext>
   );
 };
 

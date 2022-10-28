@@ -7,7 +7,7 @@ const FilterBoxPhone = ({
   filter,
 }) => {
   return (
-    <li className="filter-box-phone">
+    <li className="filter-box-phone filter-box">
       <button
         className={`filter-box__filter ${
           filter === "all" ? "filter-box__filter--all" : ""
