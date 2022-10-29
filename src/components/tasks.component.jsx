@@ -32,6 +32,7 @@ const Tasks = ({ tasks, setTask, all, setAll, isEmpty, filter }) => {
   };
 
   const handleDragEnd = (result) => {
+    if (!result.destination) return;
     const [reorderedItems] = tasks.splice(result.source.index, 1);
     tasks.splice(result.destination.index, 0, reorderedItems);
     setTask(tasks);
