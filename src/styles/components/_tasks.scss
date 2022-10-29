@@ -1,18 +1,22 @@
 .tasks {
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
+  position: relative;
 }
 .task {
   cursor: pointer;
+  background-color: var(--background-inner);
   width: 100%;
   min-height: 6.3rem;
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
   border-bottom: 2px solid var(--line-border);
-  transition: border-bottom 0.3s ease;
+  transition: border-bottom 0.3s ease, background-color 0.3s ease;
   list-style: none;
-  position: relative;
+  top: auto !important;
+  left: auto !important;
+
   &__circle {
     border-radius: 50%;
     height: 2.5rem;
