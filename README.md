@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/thenaijagamer/todo-app)
-- Live Site URL: [Add live site URL here](https://thenaijagamer.github.io/todo-app/)
+- Solution URL: [Solution](https://github.com/thenaijagamer/todo-app)
+- Live Site URL: [Todo app](https://thenaijagamer.github.io/todo-app/)
 
 ## My process
 
