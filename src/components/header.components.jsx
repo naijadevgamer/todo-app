@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { ReactComponent as MoonIcon } from "../images/icon-moon.svg";
 import { ReactComponent as SunIcon } from "../images/icon-sun.svg";
 
 const Header = ({ themeLight, setThemeLight }) => {
-  // const [theme, setTheme] = useState("day");
-
   return (
     <div className="header">
       <p className="header__logo" draggable={true}>

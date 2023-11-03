@@ -29,6 +29,7 @@ const AddTask = ({ input, setInput, tasks, setTask, all, setAll }) => {
     }
     setInput("");
   };
+
   return (
     <div className="search-box">
       <div className="search-box__circle"></div>
