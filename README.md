@@ -13,6 +13,7 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
@@ -91,3 +92,7 @@ useEffect(() => {
 - Frontend Mentor - [@thenaijagamer](https://www.frontendmentor.io/profile/thenaijagamer)
 - Twitter - [@thenaijagamer](https://www.twitter.com/thenaijagamer_)
 - LinkedIn - [Abdullah Saleeman](https://www.linkedin.com/in/abdullah-saleeman-360170243)
+
+## Acknowledgments
+
+Special thanks to the Almighty Allah for guidance and support throughout this project.
