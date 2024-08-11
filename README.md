@@ -15,8 +15,6 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -35,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution](https://github.com/thenaijagamer/todo-app)
-- Live Site URL: [Todo app](https://thenaijagamer.github.io/todo-app/)
+- Solution URL: [Solution](https://github.com/naijadevgamer/todo-app)
+- Live Site URL: [Todo app](https://naijadevgamer.github.io/todo-app/)
 
 ## My process
 
@@ -52,17 +50,6 @@ Users should be able to:
 ### What I learned
 
 - Easy creation and implementation of Theme switching
-
-```jsx
-useEffect(() => {
-    const body = document.body;
-    themeLight
-      ? (body.style.backgroundColor = "hsl(0, 0%, 98%)")
-      : (body.style.backgroundColor = "hsl(235, 21%, 11%)");
-  }, [themeLight]);
-
-<div className="App" data-theme={themeLight ? "" : "dark"}>
-```
 
 ```css
 [data-theme="dark"] {
@@ -89,8 +76,8 @@ useEffect(() => {
 ## Author
 
 - Website - [Abdullah Saleeman](https://www.remoteok.com/@abdullah_saleeman)
-- Frontend Mentor - [@thenaijagamer](https://www.frontendmentor.io/profile/thenaijagamer)
-- Twitter - [@thenaijagamer](https://www.twitter.com/thenaijagamer_)
+- Frontend Mentor - [@naijadevgamer](https://www.frontendmentor.io/profile/naijadevgamer)
+- Twitter - [@naijadevgamer](https://www.x.com/naijadevgamer)
 - LinkedIn - [Abdullah Saleeman](https://www.linkedin.com/in/abdullah-saleeman-360170243)
 
 ## Acknowledgments
