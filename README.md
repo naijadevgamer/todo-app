@@ -36,6 +36,10 @@ Users should be able to:
 - Solution URL: [Solution](https://github.com/naijadevgamer/todo-app)
 - Live Site URL: [Todo app](https://naijadevgamer.github.io/todo-app/)
 
+### Screenshot
+
+![](./public/app.png)
+
 ## My process
 
 ### Built with
@@ -75,7 +79,6 @@ Users should be able to:
 
 ## Author
 
-- Website - [Abdullah Saleeman](https://www.remoteok.com/@abdullah_saleeman)
 - Frontend Mentor - [@naijadevgamer](https://www.frontendmentor.io/profile/naijadevgamer)
 - Twitter - [@naijadevgamer](https://www.x.com/naijadevgamer)
 - LinkedIn - [Abdullah Saleeman](https://www.linkedin.com/in/abdullah-saleeman-360170243)
